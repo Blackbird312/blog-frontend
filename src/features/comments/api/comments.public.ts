@@ -5,6 +5,7 @@ const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL!;
 export type Comment = {
   id: string;
   authorId?: string | null;
+  author: { id: string; fullName: string };
   content: string;
   createdAt: string;
 };
