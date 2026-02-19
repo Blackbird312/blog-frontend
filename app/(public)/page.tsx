@@ -45,7 +45,7 @@ export default function HomePage() {
         {items.map((a) => (
           <Grid key={a.id} size={{ xs: 12, sm: 6, md: 4 }}>
             <Card variant="outlined">
-              <CardActionArea component={Link} href={`/articles/${a.slug}`}>
+              <CardActionArea component={Link} href={`/articles/${a.slug}#comments`}>
                 <CardContent>
                   <Typography variant="h6" fontWeight={700} gutterBottom noWrap>
                     {a.title}

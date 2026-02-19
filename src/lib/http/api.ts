@@ -30,7 +30,6 @@ async function createAxiosClient(): Promise<AxiosInstance> {
         (error.response?.data as any)?.message ||
         error.message ||
         "API error";
-
       throw new Error(`API ${status}: ${message}`);
     }
   );
