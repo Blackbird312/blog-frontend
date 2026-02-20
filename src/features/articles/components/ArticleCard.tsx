@@ -8,6 +8,7 @@ import {
   Typography,
 } from "@mui/material";
 import type { Article } from "../api/articles.public";
+import CreateArticleButton from "./CreateArticleButton";
 
 export default function ArticleCard({ article }: { article: Article }) {
   return (

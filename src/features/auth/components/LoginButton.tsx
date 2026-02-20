@@ -6,7 +6,7 @@ import { useSearchParams } from "next/navigation";
 
 export default function LoginButton() {
   const params = useSearchParams();
-  const callbackUrl = params.get("callbackUrl") || "/dashboard";
+  const callbackUrl = params?.get("callbackUrl") || "/";
 
   return (
     <Button

@@ -28,3 +28,8 @@ export async function fetchCommentsBySlug(slug: string, params?: { page?: number
   });
   return res.data;
 }
+
+export async function postComment(articleSlug:string, content:string) {
+  const res = await axios.post(`${API_BASE}/articles/${articleSlug}/comments`, { content });
+  return res.data;
+}

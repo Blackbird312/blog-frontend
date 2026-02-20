@@ -49,3 +49,8 @@ export async function fetchArticleBySlug(slug: string) {
   const res = await axios.get<Article>(`${API_BASE}/articles/${slug}`);
   return res.data;
 }
+
+export async function postArticle(title: string, content: string) {
+  const res = await axios.post(`${API_BASE}/articles`, { title, content });
+  return res.data;
+}

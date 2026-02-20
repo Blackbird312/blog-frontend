@@ -5,6 +5,7 @@ import { Alert, CircularProgress, Stack, Typography, Divider } from "@mui/materi
 import { useArticle } from "@/src/features/articles/hooks/useArticle";
 import { useComments } from "@/src/features/comments/hooks/useComments";
 import CommentList from "@/src/features/comments/components/CommentsList";
+import PostCommentForm from "@/src/features/comments/components/CreateComment";
 
 
 export default function ArticleDetailsPage() {
@@ -53,6 +54,8 @@ export default function ArticleDetailsPage() {
       <Typography variant="h5" fontWeight={800}>
         Comments
       </Typography>
+
+      <PostCommentForm articleSlug={slug} />
 
       <CommentList
         loading={commentsQ.isLoading}

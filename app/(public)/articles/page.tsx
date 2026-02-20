@@ -14,12 +14,13 @@ import Grid from "@mui/material/Grid";
 import Link from "next/link";
 import { useArticles } from "@/src/features/articles/hooks/useArticles";
 import ArticleCard from "@/src/features/articles/components/ArticleCard";
+import CreateArticleButton from "@/src/features/articles/components/CreateArticleButton";
 
 export default function ArticlesPage() {
   const router = useRouter();
   const searchParams = useSearchParams();
 
-  const qFromUrl = searchParams.get("q") ?? "";
+  const qFromUrl = searchParams?.get("q") ?? "";
   const [q, setQ] = React.useState(qFromUrl);
 
   // keep input in sync when user navigates back/forward
@@ -34,7 +35,7 @@ export default function ArticlesPage() {
 
   function onSearch() {
     const trimmed = q.trim();
-    const params = new URLSearchParams(searchParams.toString());
+    const params = new URLSearchParams(searchParams?.toString());
 
     if (trimmed) params.set("q", trimmed);
     else params.delete("q");
@@ -55,7 +56,7 @@ export default function ArticlesPage() {
       <Typography variant="h4" fontWeight={800}>
         Articles
       </Typography>
-
+      <CreateArticleButton />
       {/* Search bar */}
       <Stack direction={{ xs: "column", sm: "row" }} spacing={1.5}>
         <TextField
@@ -92,6 +93,7 @@ export default function ArticlesPage() {
               <ArticleCard article={a} />
             </Grid>
           ))}
+
         </Grid>
       )}
     </Stack>
